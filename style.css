@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #008080;
+    --bg-color: #303030;
+    --txt-color: #fff;
+    --border-radius: 5px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--bg-color);
+    width: 100vw;
+}
+
+header {
+    padding: 5px 30px;
+    letter-spacing: 2px;
+    background-color: var(--primary-color);
+    color: var(--txt-color);
+}
+
+header h1 {
+    font-size: 33px;
+}
+
+main {
+    min-height: 80vh;
+    padding: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main form {
+    display: flex;
+    justify-content: center;
+}
+
+form input[type="text"],
+button[type="submit"],
+.result div a {
+    font-size: 15px;
+    border: none;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
+form input[type="text"] {
+    flex-grow: 1;
+}
+
+form button[type=submit] {
+    background-color: var(--primary-color);
+    color: var(--txt-color);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--txt-color);
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.result {
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.result p {
+    margin-top: 10px;
+}
+
+.result p[class="partOfSpeech"] {
+    font-style: italic;
+    color: #808080;
+    margin-top: 2px;
+}
+
+.result div {
+    margin-top: 20px;
+}
+
+.result div a {
+    text-decoration: none;
+    background-color: #303030;
+    color: #fff;
+}
+
+.result li {
+    padding: 2px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width:320px) {
+    main form{
+        flex-direction: column;
+
+    }
+    form button[type="submit"]{
+        margin-left: 0;
+        margin-top: 8px;
+    }
+}
