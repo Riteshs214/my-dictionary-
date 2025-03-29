@@ -113,4 +113,13 @@ footer {
         margin-left: 0;
         margin-top: 8px;
     }
+     header h1 {
+        font-size: 25px;
+    }
+
+    header {
+        padding: 2px 30px;
+        letter-spacing: 1px;
+
+    }
 }
