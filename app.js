@@ -15,7 +15,6 @@ const getWordInfo = async (word) => {
     const data = await response.json();
     const definition = data[0].meanings[0].definitions[0];
 
-    console.log(data);
     resultDiv.innerHTML = `
   <h2><strong>Word :</strong> ${data[0].word}</h2>
   <p class="partOfSpeech">${data[0].meanings[0].partOfSpeech}</p>
@@ -36,6 +35,16 @@ const getWordInfo = async (word) => {
       }
     }
 
+    resultDiv.innerHTML += ` <p><strong>Synonyms :</strong></p>`;
+    // featching synonyms
+    if (definition.synonyms.length === 0) {
+      resultDiv.innerHTML += `<span>Not Found</span>`;
+    } else {
+      for (let i = 0; i < definition.synonyms.length; i++) {
+        resultDiv.innerHTML += `<li>${definition.synonyms[i]}</li>`;
+      }
+    }
+    
     //   readmore btn
     resultDiv.innerHTML += `<div><a href="${data[0].sourceUrls}" target="_blank">Read More</a></div>`;
   } catch (error) {
